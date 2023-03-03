@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.menu.appmenu.HelloController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Segreteria">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#registrazione" text="Registrazione" />
+                  <MenuItem mnemonicParsing="false" text="Modifica" />
+                  <MenuItem mnemonicParsing="false" text="Inserimento" />
+                  <MenuItem mnemonicParsing="false" text="Ricerca" />
+                  <MenuItem mnemonicParsing="false" text="Cancellazione" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ambulatorio">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Chi Siamo">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Aiuto">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

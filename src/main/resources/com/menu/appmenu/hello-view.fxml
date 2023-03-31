@@ -11,7 +11,7 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#registrazione" text="Registrazione" />
                   <MenuItem mnemonicParsing="false" text="Modifica" />
-                  <MenuItem mnemonicParsing="false" text="Inserimento" />
+                  <MenuItem mnemonicParsing="false" onAction="#visualizzazione" text="Visualizza" />
                   <MenuItem mnemonicParsing="false" text="Ricerca" />
                   <MenuItem mnemonicParsing="false" text="Cancellazione" />
             </items>

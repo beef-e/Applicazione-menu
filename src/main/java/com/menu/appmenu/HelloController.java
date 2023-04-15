@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -75,17 +76,23 @@ public class HelloController {
 
 		if(alert.showAndWait().get()== ButtonType.OK){
 			stage = (Stage) registrazionePanel.getScene().getWindow();
+
 			stage.close();
 		}
 	}
 
 	@FXML
 	protected void visualizzazione() throws IOException{
-		Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("visualizza-view.fxml")));
-		Stage stage = new Stage();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Visualizza-view.fxml"));
+		Stage stage = new Stage(StageStyle.DECORATED);
+		stage.setScene(new Scene(loader.load(), 800, 600));
 		stage.setTitle("Visualizzazione");
-		stage.setScene(new Scene(root, 800, 600));
 		stage.setResizable(false);
+		visualizzaController controller = loader.getController();
+		controller.inizializza(listapazienti);
 		stage.show();
 	}
+
+
 }
+

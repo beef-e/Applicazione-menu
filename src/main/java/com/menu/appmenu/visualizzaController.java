@@ -36,8 +36,8 @@ public class visualizzaController{
         for(Paziente paziente : listaPazienti){
             items.add(paziente.getCognome() + " " + paziente.getNome());
         }
-        ListView<String> listView = new ListView<String>();
-        listView.setItems(items);
+        //ListView<String> listView = new ListView<String>();
+        lista.setItems(items);
     }
 
     public void setListaPazienti(Vector<Paziente> listaPazienti){

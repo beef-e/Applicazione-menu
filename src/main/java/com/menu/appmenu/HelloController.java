@@ -26,14 +26,20 @@ public class HelloController {
 	@FXML private TextField txtTelefono;
 	@FXML private TextArea txtPatologia;
 
+	public void inizializza(Vector<Paziente> pListaPazienti){
+		this.listapazienti=pListaPazienti;
+	}
+
 
 	@FXML
 	protected void registrazione() throws IOException{
-		Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Registrazione-view.fxml")));
+		FXMLLoader root= new FXMLLoader(getClass().getResource("Registrazione-view.fxml"));
 		Stage stage = new Stage();
+		stage.setScene(new Scene(root.load(), 800, 600));
 		stage.setTitle("Registrazione");
-		stage.setScene(new Scene(root, 800, 600));
 		stage.setResizable(false);
+		HelloController controller=root.getController();
+		controller.inizializza(listapazienti);
 		stage.show();
 	}
 
@@ -58,6 +64,8 @@ public class HelloController {
 			listapazienti.add(new Paziente(txtCognome.getText(), txtNome.getText(), txtCF.getText(), txtTelefono.getText(), txtPatologia.getText()));
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setTitle("Registrazione avvenuta con successo");
+			alert.setContentText("Registrazione avvenuta con successo");
+			alert.show();
 			txtCognome.setText("");
 			txtNome.setText("");
 			txtPatologia.setText("");

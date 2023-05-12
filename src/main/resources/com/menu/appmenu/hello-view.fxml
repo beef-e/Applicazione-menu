@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.menu.appmenu.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.menu.appmenu.HelloController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -34,4 +34,7 @@
         </menus>
       </MenuBar>
    </top>
+   <center>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="227.0" prefWidth="388.0" text="Studio Dentistico Biffi" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>

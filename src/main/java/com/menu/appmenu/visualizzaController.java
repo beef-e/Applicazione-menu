@@ -3,13 +3,20 @@ package com.menu.appmenu;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.FileNotFoundException;
 import java.util.Vector;
 
+import static com.menu.appmenu.HelloController.leggiFile;
+
+/**
+ * Questa classe rappresenta il controller della schermata di visualizzazione dei pazienti
+ * @author Giammaria Biffi
+ * @version 1.0
+ * @see Paziente
+ * @see HelloController
+ */
 public class visualizzaController{
 
     @FXML private ListView<String> lista;
@@ -31,8 +38,9 @@ public class visualizzaController{
         //setta la lista
         lista.setItems(pazienti);
     }*/
-    public void inizializza(Vector<Paziente> listaPazienti){
+    public void inizializza() throws FileNotFoundException {
         ObservableList<String> items = FXCollections.observableArrayList();
+        setListaPazienti();
         for(Paziente paziente : listaPazienti){
             items.add(paziente.getCognome() + " " + paziente.getNome());
         }
@@ -40,7 +48,8 @@ public class visualizzaController{
         lista.setItems(items);
     }
 
-    public void setListaPazienti(Vector<Paziente> listaPazienti){
-        this.listaPazienti = listaPazienti;
+    public void setListaPazienti() throws FileNotFoundException {
+        this.listaPazienti= leggiFile();
+        System.out.println(listaPazienti.size());
     }
 }

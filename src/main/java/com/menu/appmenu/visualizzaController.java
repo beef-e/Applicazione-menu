@@ -19,25 +19,19 @@ import static com.menu.appmenu.HelloController.leggiFile;
  */
 public class visualizzaController{
 
+    /**
+     * Questa variabile rappresenta la lista dei pazienti nel file FX
+     */
     @FXML private ListView<String> lista;
+
+    /**
+     * Questa variabile rappresenta l'effettiva lista dei pazienti nel file
+     */
     private Vector<Paziente> listaPazienti;
 
-    /*@Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        //crea un observable list che è una lista che si aggiorna automaticamente
-        ObservableList<String> pazienti = FXCollections.observableArrayList();
-        //cicla la lista dei pazienti e aggiunge i pazienti alla lista
-
-        for(int i=0; i < listaPazienti.size(); i++){
-            pazienti.add(listaPazienti.get(i).getCognome() + " " + listaPazienti.get(i).getNome());
-        }
-
-        for(Paziente paziente : listaPazienti){
-            pazienti.add(paziente.getCognome() + " " + paziente.getNome());
-        }
-        //setta la lista
-        lista.setItems(pazienti);
-    }*/
+    /**
+     * Questo metodo inizializza la lista dei pazienti
+     * */
     public void inizializza() throws FileNotFoundException {
         ObservableList<String> items = FXCollections.observableArrayList();
         setListaPazienti();
@@ -48,6 +42,9 @@ public class visualizzaController{
         lista.setItems(items);
     }
 
+    /**
+     * Questo metodo legge il file listaPazienti.txt e ne salva il valore in listaPazienti
+     * */
     public void setListaPazienti() throws FileNotFoundException {
         this.listaPazienti= leggiFile();
         System.out.println(listaPazienti.size());

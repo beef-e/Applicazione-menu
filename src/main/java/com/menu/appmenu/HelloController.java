@@ -31,6 +31,7 @@ public class HelloController {
 	@FXML private TextField txtCF;
 	@FXML private TextField txtTelefono;
 	@FXML private TextArea txtPatologia;
+	@FXML private DatePicker dateData;
 
 	/**
 	 * Metodo che crea il file listaPazienti.txt
@@ -59,7 +60,7 @@ public class HelloController {
 		while(reader.hasNextLine()){
 			String data = reader.nextLine();
 			String [] dataVero=data.split(",");
-			vettore.add(new Paziente(dataVero[0],dataVero[1],dataVero[2],dataVero[3],dataVero[4]));
+			vettore.add(new Paziente(dataVero[0],dataVero[1],dataVero[2],dataVero[3],dataVero[4], dataVero[5]));
 
 			//listapazienti.add(pazientino);
 
@@ -91,7 +92,7 @@ public class HelloController {
 	 * */
 	public String concatenaStringa(Paziente paziente){
 		String Stringa="";
-		Stringa+=paziente.getCognome()+","+paziente.getNome()+","+paziente.getCf()+","+paziente.getTelefono()+","+paziente.getPatologia()+"\n";
+		Stringa+=paziente.getCognome()+","+paziente.getNome()+","+paziente.getCf()+","+paziente.getTelefono()+","+paziente.getPatologia()+","+paziente.getDataAppuntamento()+"\n";
 		return Stringa;
 	}
 
@@ -127,6 +128,7 @@ public class HelloController {
 		txtPatologia.setText("");
 		txtTelefono.setText("");
 		txtCF.setText("");
+		dateData.setValue(null);
 	}
 
 	/**
@@ -135,14 +137,16 @@ public class HelloController {
 	 */
 	@FXML
 	protected void salvaRegistrazione(){
-		if(txtCognome.getText().isEmpty() || txtNome.getText().isEmpty() || txtCF.getText().isEmpty() || txtTelefono.getText().isEmpty() || txtPatologia.getText().isEmpty()){
+		if(txtCognome.getText().isEmpty() || txtNome.getText().isEmpty() || txtCF.getText().isEmpty() || txtTelefono.getText().isEmpty() || txtPatologia.getText().isEmpty() || dateData.getValue()==null){
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setTitle("Errore");
 			alert.setHeaderText("Errore nella registrazione");
 			alert.setContentText("Compila tutti i campi");
 			alert.showAndWait();
 		}else{
-			scriviFile(concatenaStringa(new Paziente(txtCognome.getText(), txtNome.getText(), txtCF.getText(), txtTelefono.getText(), txtPatologia.getText())));
+			String data=dateData.getValue().toString();
+			System.out.println(data);
+			scriviFile(concatenaStringa(new Paziente(txtCognome.getText(), txtNome.getText(), txtCF.getText(), txtTelefono.getText(), txtPatologia.getText(), data)));
 			//listapazienti.add(new Paziente(txtCognome.getText(), txtNome.getText(), txtCF.getText(), txtTelefono.getText(), txtPatologia.getText()));
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setTitle("Registrazione avvenuta con successo");
@@ -153,6 +157,7 @@ public class HelloController {
 			txtPatologia.setText("");
 			txtTelefono.setText("");
 			txtCF.setText("");
+			dateData.setValue(null);
 		}
 	}
 

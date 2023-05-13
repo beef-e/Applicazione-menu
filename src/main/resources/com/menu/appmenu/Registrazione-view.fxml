@@ -4,25 +4,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="registrazionePanel" prefHeight="465.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.menu.appmenu.HelloController">
+<AnchorPane fx:id="registrazionePanel" prefHeight="465.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.menu.appmenu.HelloController">
    <children>
-      <Label layoutX="67.0" layoutY="100.0" prefHeight="18.0" prefWidth="80.0" text="Cognome" />
-      <Label layoutX="67.0" layoutY="136.0" prefHeight="18.0" prefWidth="55.0" text="Nome" />
-      <Label layoutX="67.0" layoutY="306.0" prefHeight="18.0" prefWidth="69.0" text="Patologia" />
-      <TextField fx:id="txtCognome" layoutX="182.0" layoutY="96.0" />
-      <TextField fx:id="txtNome" layoutX="182.0" layoutY="132.0" />
-      <TextArea fx:id="txtPatologia" layoutX="182.0" layoutY="302.0" prefHeight="200.0" prefWidth="200.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="24.0" prefHeight="48.0" prefWidth="394.0" text="Registrazione Paziente">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Button layoutX="135.0" layoutY="533.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#esci" prefHeight="26.0" prefWidth="80.0" text="Cancella" />
-      <Button layoutX="382.0" layoutY="533.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#salvaRegistrazione" prefHeight="26.0" prefWidth="80.0" text="Salva" />
+      <Label layoutX="67.0" layoutY="100.0" prefHeight="18.0" prefWidth="80.0" text="Cognome" />
+      <Label layoutX="67.0" layoutY="136.0" prefHeight="18.0" prefWidth="55.0" text="Nome" />
       <Label layoutX="67.0" layoutY="174.0" prefHeight="18.0" prefWidth="55.0" text="C.F." />
-      <TextField fx:id="txtCF" layoutX="182.0" layoutY="170.0" />
       <Label layoutX="68.0" layoutY="217.0" prefHeight="18.0" prefWidth="55.0" text="Telefono" />
-      <TextField fx:id="txtTelefono" layoutX="183.0" layoutY="213.0" />
-      <Button layoutX="260.0" layoutY="533.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#resetRegistrazione" prefHeight="26.0" prefWidth="80.0" text="Reset" />
+      <Label layoutX="67.0" layoutY="262.0" prefHeight="18.0" prefWidth="105.0" text="Appuntamento" />
+      <Label layoutX="67.0" layoutY="332.0" prefHeight="18.0" prefWidth="69.0" text="Patologia" />
+      <TextField fx:id="txtCognome" layoutX="182.0" layoutY="96.0" prefHeight="26.0" prefWidth="189.0" />
+      <TextField fx:id="txtNome" layoutX="182.0" layoutY="132.0" prefHeight="26.0" prefWidth="189.0" />
+      <TextField fx:id="txtCF" layoutX="182.0" layoutY="170.0" prefHeight="26.0" prefWidth="189.0" />
+      <TextField fx:id="txtTelefono" layoutX="183.0" layoutY="213.0" prefHeight="26.0" prefWidth="189.0" />
+      <DatePicker fx:id="dateData" layoutX="182.0" layoutY="258.0" />
+      <TextArea fx:id="txtPatologia" layoutX="182.0" layoutY="329.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="135.0" layoutY="574.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#esci" prefHeight="26.0" prefWidth="80.0" text="Cancella" />
+      <Button layoutX="382.0" layoutY="574.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#salvaRegistrazione" prefHeight="26.0" prefWidth="80.0" text="Salva" />
+      <Button layoutX="260.0" layoutY="574.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#resetRegistrazione" prefHeight="26.0" prefWidth="80.0" text="Reset" />
    </children>
 </AnchorPane>

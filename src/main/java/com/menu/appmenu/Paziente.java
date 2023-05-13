@@ -1,5 +1,7 @@
 package com.menu.appmenu;
 
+import java.util.Date;
+
 /**
  * Questa classe rappresenta un paziente
  * @author Giammaria Biffi
@@ -32,19 +34,26 @@ public class Paziente {
     String patologia;
 
     /**
+     * DataAppuntamento rappresenta la data dell'appuntamento del paziente
+     */
+    String dataAppuntamento;
+
+    /**
      * Costruttore della classe Paziente
      * @param cognome Cognome del paziente
      * @param nome Nome del paziente
      * @param cf Codice fiscale del paziente
      * @param telefono Numero di telefono del paziente
      * @param patologia Patologia del paziente
+     * @param dataAppuntamento Data dell'appuntamento del paziente
      */
-    public Paziente(String cognome, String nome, String cf, String telefono, String patologia){
+    public Paziente(String cognome, String nome, String cf, String telefono, String patologia, String dataAppuntamento){
         this.cognome = cognome;
         this.nome = nome;
         this.cf = cf;
         this.telefono = telefono;
         this.patologia = patologia;
+        this.dataAppuntamento = dataAppuntamento;
     }
 
     /**
@@ -126,4 +135,16 @@ public class Paziente {
     public void setPatologia(String patologia) {
         this.patologia = patologia;
     }
+
+    /**
+     * Metodo che restituisce la data dell'appuntamento del paziente
+     * @return Data dell'appuntamento del paziente
+     */
+    public String getDataAppuntamento() {return dataAppuntamento;}
+
+    /**
+     * Metodo che imposta la data dell'appuntamento del paziente
+     * @param dataAppuntamento Data dell'appuntamento del paziente
+     */
+    public void setDataAppuntamento(String dataAppuntamento) {this.dataAppuntamento = dataAppuntamento;}
 }

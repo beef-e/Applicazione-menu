@@ -46,7 +46,6 @@ public class visualizzaController{
      * Questo metodo legge il file listaPazienti.txt e ne salva il valore in listaPazienti
      * */
     public void setListaPazienti() throws FileNotFoundException {
-        this.listaPazienti= leggiFile();
-        System.out.println(listaPazienti.size());
+        this.listaPazienti= leggiFile();;
     }
 }

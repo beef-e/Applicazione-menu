@@ -194,6 +194,22 @@ public class HelloController {
 		stage.show();
 	}
 
+	/**
+	 * Metodo per chiamare la finestra di visualizzazione degli appuntamenti correnti
+	 * @throws IOException
+	 */
+	@FXML
+	protected void visualizzaAppuntamenti() throws IOException{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Appuntamenti-view.fxml"));
+		Stage stage = new Stage(StageStyle.DECORATED);
+		stage.setScene(new Scene(loader.load(), 800, 600));
+		stage.setTitle("Visualizza Appuntamenti");
+		stage.setResizable(false);
+		AppuntamentiController controller = loader.getController();
+		controller.inizializza();
+		stage.show();
+	}
+
 
 }
 

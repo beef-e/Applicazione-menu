@@ -43,15 +43,16 @@ public class AppuntamentiController {
     }
 
     public Vector<Paziente> filtraPazienti(Vector<Paziente> plistaPazienti){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Calendar dataOggi = Calendar.getInstance();
         Date data = Calendar.getInstance().getTime();
         String stringaData= sdf.format(data);
+        System.out.println(stringaData);
         Vector<Paziente> plistaPazienti2 = new Vector<Paziente>();
         plistaPazienti2=plistaPazienti;
         for (int i=0; i< plistaPazienti2.size(); i++){
             String dataAppuntamento = plistaPazienti2.get(i).getDataAppuntamento();
-            if(dataAppuntamento.compareTo(stringaData) != 0){
+            if(dataAppuntamento.equals(stringaData) == false){
                 plistaPazienti.remove(plistaPazienti2.get(i));
             }
         }

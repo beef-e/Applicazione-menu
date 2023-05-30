@@ -16,7 +16,7 @@ import static com.menu.appmenu.HelloController.leggiFile;
 /**
  * Questa classe rappresenta il controller della schermata di visualizzazione dei pazienti
  * @author Giammaria Biffi
- * @version 1.0
+ * @version 1.5
  * @see Paziente
  * @see HelloController
  */
@@ -44,7 +44,6 @@ public class AppuntamentiController {
 
     public Vector<Paziente> filtraPazienti(Vector<Paziente> plistaPazienti) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Calendar dataOggi = Calendar.getInstance();
         Date data = Calendar.getInstance().getTime();
         String stringaData = sdf.format(data);
         System.out.println(stringaData);
@@ -56,5 +55,14 @@ public class AppuntamentiController {
             }
         }
         return plistaPazienti2;
+    }
+
+    public void eliminaElemento() {
+        ObservableList<String> items = FXCollections.observableArrayList(lista.getItems());
+        int selectedIndex = lista.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0 && selectedIndex < items.size()) {
+            items.remove(selectedIndex);
+        }
+        lista.setItems(items);
     }
 }

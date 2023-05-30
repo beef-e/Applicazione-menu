@@ -42,26 +42,19 @@ public class AppuntamentiController {
         this.listaPazienti = filtraPazienti(listaPazienti);
     }
 
-    public Vector<Paziente> filtraPazienti(Vector<Paziente> plistaPazienti){
+    public Vector<Paziente> filtraPazienti(Vector<Paziente> plistaPazienti) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Calendar dataOggi = Calendar.getInstance();
         Date data = Calendar.getInstance().getTime();
-        String stringaData= sdf.format(data);
+        String stringaData = sdf.format(data);
         System.out.println(stringaData);
-        Vector<Paziente> plistaPazienti2 = new Vector<Paziente>();
-        plistaPazienti2=plistaPazienti;
-        for (int i=0; i< plistaPazienti2.size(); i++){
+        Vector<Paziente> plistaPazienti2 = new Vector<Paziente>(plistaPazienti);
+        for (int i = plistaPazienti2.size() - 1; i >= 0; i--) {
             String dataAppuntamento = plistaPazienti2.get(i).getDataAppuntamento();
-            if(dataAppuntamento.equals(stringaData) == false){
-                plistaPazienti.remove(plistaPazienti2.get(i));
+            if (!dataAppuntamento.equals(stringaData)) {
+                plistaPazienti2.remove(i);
             }
         }
-        /*for(Paziente paziente : plistaPazienti2){
-            String dataAppuntamento = paziente.getDataAppuntamento();
-            if(dataAppuntamento.compareTo(stringaData) != 0){
-                plistaPazienti.remove(paziente);
-            }
-        }*/
-        return plistaPazienti;
+        return plistaPazienti2;
     }
 }
